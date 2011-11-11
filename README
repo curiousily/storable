@@ -1,0 +1,4 @@
+In order to use this you have to install NuGet from here:
+http://nuget.org
+and then run in the nuget console:
+Install-Package EntityFramework
