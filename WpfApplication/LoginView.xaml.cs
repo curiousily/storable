@@ -23,5 +23,11 @@ namespace WpfApplication
             InitializeComponent();
             UsernameBox.Focus();
         }
+
+        private void LoginClickHandler(object sender, RoutedEventArgs e)
+        {
+            var adminView = new AdminView();
+            adminView.Show();
+        }
     }
 }

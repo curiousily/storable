@@ -1,15 +1,12 @@
 ﻿<Window x:Class="WpfApplication.UserManagement.UserListView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="UserListView" Height="300" Width="300">
+        Title="Manage Users" Height="300" Width="300" WindowStartupLocation="CenterScreen" Closing="WindowClosingHandler">
     <StackPanel>
-        <ToolBar>
-            <Button Content="New Group"/>
-        </ToolBar>
-        <DataGrid AutoGenerateColumns="False">
+        <DataGrid Name="UserList" AutoGenerateColumns="False" ItemsSource="{Binding}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Username" Width="*" />
-                <DataGridComboBoxColumn Header="Group" Width="*" />
+                <DataGridTextColumn Header="Username" Binding="{Binding Name}" Width="*" />
+                <DataGridCheckBoxColumn Header="Administrator" Binding="{Binding Administrator}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
