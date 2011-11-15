@@ -11,17 +11,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApplication.UserManagement;
 
 namespace WpfApplication
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdminView : Window
     {
-        public MainWindow()
+        public AdminView()
         {
             InitializeComponent();
+        }
+
+        private void ManageUsersClickHandler(object sender, RoutedEventArgs e)
+        {
+            var userList = new UserListView();
+            userList.Show();
         }
     }
 }
