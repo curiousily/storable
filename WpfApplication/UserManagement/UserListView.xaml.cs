@@ -14,6 +14,7 @@ using NaughtySpirit.StoreManager.DataLayer;
 using NaughtySpirit.StoreManager.DomainObjects;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.ComponentModel;
 
 namespace WpfApplication.UserManagement
 {
@@ -27,12 +28,10 @@ namespace WpfApplication.UserManagement
         public UserListView()
         {
             InitializeComponent();
-            //var dataContext = new StorageContext();
             var userQuery = from user in dataContext.Users select user;
             Users = new ObservableCollection<User>(userQuery);
             
-            Users.CollectionChanged += new NotifyCollectionChangedEventHandler(Users_CollectionChanged);
-            //var userQuery = from user in dataContext.Users select user;
+            Users.CollectionChanged += new NotifyCollectionChangedEventHandler(Users_CollectionChanged);           
             UserList.DataContext = Users;
         }
 
@@ -50,13 +49,9 @@ namespace WpfApplication.UserManagement
             }
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                var groupQuery = from gr in dataContext.Groups select gr;
-                IEnumerable<Group> groups = groupQuery;
-                Group  group = groups.ElementAt<Group>(0);
                 foreach (var item in e.NewItems)
                 {
                     var user = (User)item;
-                    user.Group = group;
                     dataContext.Users.Add(user);
                     dataContext.SaveChanges();
                 }
@@ -66,9 +61,19 @@ namespace WpfApplication.UserManagement
 
         public ObservableCollection<User> Users { get; set; }
 
-        private void UserList_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        private void WindowClosingHandler(object sender, CancelEventArgs e)
         {
-            Console.WriteLine(UserList.SelectedValue);
+            var userQuery = from user in dataContext.Users select user;
+            foreach (var user in userQuery)
+            {
+                dataContext.Users.Remove(user);
+            }
+            dataContext.SaveChanges();
+            foreach (var user in Users)
+            {
+                dataContext.Users.Add(user);
+            }
+            dataContext.SaveChanges();
         }
     }
 }

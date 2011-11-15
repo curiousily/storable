@@ -17,10 +17,10 @@ namespace WpfApplication
         protected override void OnStartup(StartupEventArgs e)
         {
             //var context = new StorageContext();
-            //var group = new Group { Name = "Admin" };
-            //var user = new User { Name = "Venelin", Password= "pass", Group = group };
+            //var user = new User { Name = "Venelin", Password= "pass", Administrator = true };
             //context.Users.Add(user);
             //context.SaveChanges();
+            //this.StartupUri = new System.Uri("/LoginView.xaml", System.UriKind.Relative);
             this.StartupUri = new System.Uri("/UserManagement/UserListView.xaml", System.UriKind.Relative);
 
         }
