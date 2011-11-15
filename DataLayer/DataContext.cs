@@ -10,5 +10,6 @@ namespace NaughtySpirit.StoreManager.DataLayer
     public class StorageContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
     }
 }
