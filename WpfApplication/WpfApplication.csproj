@@ -68,9 +68,11 @@
     <Compile Include="SupplierManagement\SupplierListView.xaml.cs">
       <DependentUpon>SupplierListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserAuthentication.cs" />
     <Compile Include="UserManagement\UserListView.xaml.cs">
       <DependentUpon>UserListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserManager.cs" />
     <Page Include="LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

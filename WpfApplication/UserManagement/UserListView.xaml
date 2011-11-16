@@ -6,7 +6,8 @@
         <DataGrid Name="UserList" AutoGenerateColumns="False" ItemsSource="{Binding}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Username" Binding="{Binding Name}" Width="*" />
-                <DataGridCheckBoxColumn Header="Administrator" Binding="{Binding Administrator}" Width="*" />
+            <DataGridTextColumn Header="Password" Binding="{Binding Password}" Width="*" />
+            <DataGridCheckBoxColumn Header="Administrator" Binding="{Binding Administrator}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
 </Window>

@@ -40,7 +40,7 @@ namespace WpfApplication
             var addProductView = new AddProductView(orderItem);
             addProductView.ShowDialog();
             var orderItems = Resources["orderItems"] as OrderItems;
-            OrderTotal += orderItem.Product.Price;
+            OrderTotal += orderItem.ProductPrice;
             OrderLabel.Text = OrderTotal.ToString();
             orderItems.Add(orderItem);
         }
@@ -54,6 +54,7 @@ namespace WpfApplication
                 order.OrderItems.Add(orderItem);
             }
             order.Price = OrderTotal;
+            order.User = UserManager.Instance.User.Name;
             dataContext.Orders.Add(order);
             dataContext.SaveChanges();
         }

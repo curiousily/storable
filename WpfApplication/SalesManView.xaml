@@ -15,15 +15,15 @@
         <DataGrid Name="CartItems" AutoGenerateColumns="False" ItemsSource="{Binding Source={StaticResource cvsOrderItems}}"
                   CanUserAddRows="False" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Supplier" IsReadOnly="True" Binding="{Binding Product.Supplier.Name}" Width="*" />
-                <DataGridTextColumn Header="Product" IsReadOnly="True" Binding="{Binding Product.Name}" Width="*" />
+                <DataGridTextColumn Header="Supplier" IsReadOnly="True" Binding="{Binding SupplierName}" Width="*" />
+                <DataGridTextColumn Header="Product" IsReadOnly="True" Binding="{Binding ProductName}" Width="*" />
                 <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
             <TextBlock Text="Total:"/>
             <TextBlock Name="OrderLabel" Text="0" Margin="20 0 0 0"/>
-            <Button Content="Order" Margin="150 0 0 0" Click="OrderHandler"/>    
+            <Button Content="Sale" Margin="150 0 0 0" Click="OrderHandler"/>    
         </StackPanel>
         
     </StackPanel>
