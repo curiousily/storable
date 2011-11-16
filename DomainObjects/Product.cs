@@ -12,5 +12,15 @@ namespace NaughtySpirit.StoreManager.DomainObjects
         public string Description { get; set; }
         public decimal Price { get; set; }
         public Supplier Supplier { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Product)
+            {
+                var otherProduct = (Product)obj;
+                return otherProduct.Id == Id;
+            }
+            return false;
+        }
     }
 }
