@@ -10,6 +10,8 @@ namespace NaughtySpirit.StoreManager.DomainObjects
         public int Id { get; set; }
         public Order Order { get; set; }
         public int Quantity { get; set; }
-        public Product Product { get; set; }
+        public string SupplierName { get; set; }
+        public string ProductName { get; set; }
+        public decimal ProductPrice { get; set; }
     }
 }

@@ -26,8 +26,26 @@ namespace WpfApplication
 
         private void LoginClickHandler(object sender, RoutedEventArgs e)
         {
-            var adminView = new AdminView();
-            adminView.Show();
+            var authenticator = new UserAuthentication();
+            var username = UsernameBox.Text;
+            var password = UserPasswordBox.Password;
+            var user = authenticator.Authenticate(username, password);
+            if (user != null)
+            {
+                UserManager.Instance.User = user;
+                if (user.Administrator)
+                {
+                    var adminView = new AdminView();
+                    adminView.Show();
+                }
+                else
+                {
+                    var salesManView = new SalesManView();
+                    salesManView.Show();
+                }
+                
+                Close();
+            }            
         }
     }
 }
