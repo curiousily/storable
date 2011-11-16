@@ -21,7 +21,7 @@ namespace WpfApplication
             //context.Users.Add(user);
             //context.SaveChanges();
             //this.StartupUri = new System.Uri("/LoginView.xaml", System.UriKind.Relative);
-            this.StartupUri = new System.Uri("/SupplierManagement/SupplierListView.xaml", System.UriKind.Relative);
+            this.StartupUri = new System.Uri("/SalesManView.xaml", System.UriKind.Relative);
 
         }
     }
