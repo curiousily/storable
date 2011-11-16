@@ -13,7 +13,7 @@ namespace NaughtySpirit.StoreManager.DomainObjects
         }
 
         public int Id { get; set; }
-        public User User { get; set; }
+        public string User { get; set; }
         public IList<OrderItem> OrderItems { get; set; }
 
         public decimal Price { get; set; }

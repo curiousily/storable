@@ -15,8 +15,8 @@
         <DataGrid Name="CartItems" AutoGenerateColumns="False" ItemsSource="{Binding Source={StaticResource cvsOrderItems}}"
                   CanUserAddRows="False" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Supplier" IsReadOnly="True" Binding="{Binding Product.Supplier.Name}" Width="*" />
-                <DataGridTextColumn Header="Product" IsReadOnly="True" Binding="{Binding Product.Name}" Width="*" />
+                <DataGridTextColumn Header="Supplier" IsReadOnly="True" Binding="{Binding SupplierName}" Width="*" />
+                <DataGridTextColumn Header="Product" IsReadOnly="True" Binding="{Binding ProductName}" Width="*" />
                 <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>

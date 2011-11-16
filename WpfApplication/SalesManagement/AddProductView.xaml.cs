@@ -84,7 +84,10 @@ namespace WpfApplication.SalesManagement
 
         private void AddClickHandler(object sender, RoutedEventArgs e)
         {
-            orderItem.Product = ProductList.SelectedValue as Product;
+            var product = ProductList.SelectedValue as Product;
+            orderItem.ProductName = product.Name;
+            orderItem.ProductPrice = product.Price;
+            orderItem.SupplierName = product.Supplier.Name;
             Close();
         }
     }
