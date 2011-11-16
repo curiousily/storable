@@ -63,16 +63,6 @@ namespace WpfApplication.UserManagement
 
         private void WindowClosingHandler(object sender, CancelEventArgs e)
         {
-            var userQuery = from user in dataContext.Users select user;
-            foreach (var user in userQuery)
-            {
-                dataContext.Users.Remove(user);
-            }
-            dataContext.SaveChanges();
-            foreach (var user in Users)
-            {
-                dataContext.Users.Add(user);
-            }
             dataContext.SaveChanges();
         }
     }
