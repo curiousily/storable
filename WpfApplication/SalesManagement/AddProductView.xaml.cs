@@ -22,13 +22,16 @@ namespace WpfApplication.SalesManagement
     public partial class AddProductView : Window
     {
         private readonly StorageContext dataContext = new StorageContext();
+        private OrderItem orderItem;
 
-        public AddProductView()
+        public AddProductView(OrderItem orderItem)
         {
+            // TODO: Complete member initialization
+            this.orderItem = orderItem;
             InitializeComponent();
             var suppliersQuery = from supplier in dataContext.Suppliers.Include("Products") select supplier;
-            var suppliers = (Suppliers) Resources["suppliers"];
-            foreach (var supplier in suppliersQuery) 
+            var suppliers = (Suppliers)Resources["suppliers"];
+            foreach (var supplier in suppliersQuery)
             {
                 suppliers.Add(supplier);
             }
@@ -77,6 +80,12 @@ namespace WpfApplication.SalesManagement
         private void ProductFilterBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(ProductList.ItemsSource).Refresh();
+        }
+
+        private void AddClickHandler(object sender, RoutedEventArgs e)
+        {
+            orderItem.Product = ProductList.SelectedValue as Product;
+            Close();
         }
     }
 

@@ -12,5 +12,6 @@ namespace NaughtySpirit.StoreManager.DataLayer
         public DbSet<User> Users { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

@@ -10,6 +10,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplication.SalesManagement;
+using NaughtySpirit.StoreManager.DomainObjects;
+using System.Collections.ObjectModel;
+using NaughtySpirit.StoreManager.DataLayer;
 
 namespace WpfApplication
 {
@@ -18,9 +22,43 @@ namespace WpfApplication
     /// </summary>
     public partial class SalesManView : Window
     {
+
+        public decimal OrderTotal { get; set; }
+
+        private readonly StorageContext dataContext = new StorageContext();
+
         public SalesManView()
         {
+            OrderTotal = 0;
             InitializeComponent();
         }
+
+        private void AddProductHandler(object sender, RoutedEventArgs e)
+        {
+            var orderItem = new OrderItem();
+            orderItem.Quantity = 1;
+            var addProductView = new AddProductView(orderItem);
+            addProductView.ShowDialog();
+            var orderItems = Resources["orderItems"] as OrderItems;
+            OrderTotal += orderItem.Product.Price;
+            OrderLabel.Text = OrderTotal.ToString();
+            orderItems.Add(orderItem);
+        }
+
+        private void OrderHandler(object sender, RoutedEventArgs e)
+        {
+            var orderItems = Resources["orderItems"] as OrderItems;
+            var order = new Order();
+            foreach (var orderItem in orderItems)
+            { 
+                order.OrderItems.Add(orderItem);
+            }
+            order.Price = OrderTotal;
+            dataContext.Orders.Add(order);
+            dataContext.SaveChanges();
+        }
     }
+
+    public class OrderItems : ObservableCollection<OrderItem>
+    { }
 }
