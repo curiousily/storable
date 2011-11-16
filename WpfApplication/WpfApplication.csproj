@@ -59,6 +59,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SalesManagement\AddProductView.xaml.cs">
+      <DependentUpon>AddProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SalesManView.xaml.cs">
+      <DependentUpon>SalesManView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SupplierManagement\SupplierListView.xaml.cs">
       <DependentUpon>SupplierListView.xaml</DependentUpon>
     </Compile>
@@ -84,6 +90,14 @@
       <DependentUpon>AdminView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SalesManagement\AddProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SalesManView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SupplierManagement\SupplierListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
