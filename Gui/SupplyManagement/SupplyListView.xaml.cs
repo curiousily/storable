@@ -35,17 +35,17 @@ namespace NaughtySpirit.StoreManager.Gui.SupplyManagement
             }
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void WindowClosingHandler(object sender, System.ComponentModel.CancelEventArgs e)
         {
             dataContext.SaveChanges();
         }
 
-        private void SupplierList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SuppliersSelectionChangedHandler(object sender, SelectionChangedEventArgs e)
         {
             dataContext.SaveChanges();
         }
 
-        private void ProductList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ProductsSelectionChangedHandler(object sender, SelectionChangedEventArgs e)
         {
             dataContext.SaveChanges();
         }

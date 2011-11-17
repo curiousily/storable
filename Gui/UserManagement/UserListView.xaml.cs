@@ -31,11 +31,11 @@ namespace NaughtySpirit.StoreManager.Gui.UserManagement
             var userQuery = from user in dataContext.Users select user;
             Users = new ObservableCollection<User>(userQuery);
             
-            Users.CollectionChanged += new NotifyCollectionChangedEventHandler(Users_CollectionChanged);           
+            Users.CollectionChanged += new NotifyCollectionChangedEventHandler(UsersChangedHandler);           
             UserList.DataContext = Users;
         }
 
-        void Users_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        void UsersChangedHandler(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
