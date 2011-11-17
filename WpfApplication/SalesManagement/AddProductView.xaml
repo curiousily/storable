@@ -5,7 +5,7 @@
         Title="AddProductView" Height="300" Width="300">
     <Window.Resources>
         <local:Suppliers x:Key="suppliers" />
-        <CollectionViewSource x:Key="cvsSuppliers" Source="{StaticResource suppliers}" Filter="CollectionViewSource_Filter" 
+        <CollectionViewSource x:Key="cvsSuppliers" Source="{StaticResource suppliers}" Filter="SuppliersFilter" 
                           >
         </CollectionViewSource>
         <local:Products x:Key="products" />

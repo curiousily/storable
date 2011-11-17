@@ -38,12 +38,20 @@ namespace WpfApplication.SalesManagement
             }
         }
 
-        private void CollectionViewSource_Filter(object sender, FilterEventArgs e)
+        private void SuppliersFilter(object sender, FilterEventArgs e)
         {
             Supplier s = e.Item as Supplier;
             if (s != null)
             // If filter is turned on, filter completed items.
             {
+                
+                var productCount = s.Products.Count<Product>(p => p.InWarehouse);
+                if (productCount == 0)
+                {
+                    e.Accepted = false;
+                    return;
+                }
+
                 if (s.Name.Contains(FilterBox.Text))
                 {
                     e.Accepted = true;

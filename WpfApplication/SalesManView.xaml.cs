@@ -40,9 +40,13 @@ namespace WpfApplication
             var addProductView = new AddProductView(orderItem);
             addProductView.ShowDialog();
             var orderItems = Resources["orderItems"] as OrderItems;
-            OrderTotal += orderItem.ProductPrice;
-            OrderLabel.Text = OrderTotal.ToString();
-            orderItems.Add(orderItem);
+            if (!String.IsNullOrEmpty(orderItem.ProductName))
+            {
+                OrderTotal += orderItem.ProductPrice;
+                OrderLabel.Text = OrderTotal.ToString();
+                orderItems.Add(orderItem);
+            }
+            
         }
 
         private void OrderHandler(object sender, RoutedEventArgs e)

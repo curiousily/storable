@@ -66,25 +66,16 @@ namespace WpfApplication
             Supplier s = e.Item as Supplier;
             if (s != null)
             {
-                bool flag = false;
-                foreach (var product in s.Products)
+                var productCount = s.Products.Count<Product>(p => !p.InWarehouse);
+                if (productCount == 0)
                 {
-                    if (!product.InWarehouse)
-                    {
-                        flag = true;
-                        break;
-                    }
-                }
-                if (flag)
-                {
-                    e.Accepted = true;
+                    e.Accepted = false;
+
                 }
                 else
                 {
-                    e.Accepted = false;
-                }
-
-                
+                    e.Accepted = true;
+                }                
             }
         }
     }
