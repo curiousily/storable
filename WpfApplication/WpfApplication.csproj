@@ -65,8 +65,8 @@
     <Compile Include="SalesManView.xaml.cs">
       <DependentUpon>SalesManView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SupplierManagement\SupplierListView.xaml.cs">
-      <DependentUpon>SupplierListView.xaml</DependentUpon>
+    <Compile Include="SupplierManagement\SupplyListView.xaml.cs">
+      <DependentUpon>SupplyListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserAuthentication.cs" />
     <Compile Include="UserManagement\UserListView.xaml.cs">
@@ -103,7 +103,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SupplierManagement\SupplierListView.xaml">
+    <Page Include="SupplierManagement\SupplyListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

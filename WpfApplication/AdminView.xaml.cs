@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApplication.UserManagement;
+using WpfApplication.SupplierManagement;
 
 namespace WpfApplication
 {
@@ -28,13 +29,19 @@ namespace WpfApplication
         private void ManageUsersClickHandler(object sender, RoutedEventArgs e)
         {
             var userList = new UserListView();
-            userList.Show();
+            userList.ShowDialog();
         }
 
         private void ManageWarehouseClickHandler(object sender, RoutedEventArgs e)
         {
             var warehouseView = new WarehouseView();
             warehouseView.ShowDialog();
+        }
+
+        private void ManageSuppliesClickHandler(object sender, RoutedEventArgs e)
+        {
+            var suppliersView = new SupplyListView();
+            suppliersView.ShowDialog();
         }
     }
 }

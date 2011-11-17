@@ -4,7 +4,7 @@
         Title="Administration Panel" Height="200" Width="300" WindowStartupLocation="CenterScreen">
     <StackPanel>
         <Button Content="User Management" Click="ManageUsersClickHandler" Padding="5" Margin="20 20 20 0"/>
-        <Button Content="Supplier Management" Padding="5" Margin="20 20 20 0"/>
+        <Button Content="Supply Management" Padding="5" Margin="20 20 20 0" Click="ManageSuppliesClickHandler" />
         <Button Content="Warehouse Management" Padding="5" Margin="20 20 20 0" Click="ManageWarehouseClickHandler" />
     </StackPanel>
 </Window>

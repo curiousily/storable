@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApplication.SupplierManagement.SupplyListView"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApplication.SupplierManagement"
+        Title="Manage Supplies" Height="800" Width="600" Closing="Window_Closing">
+    <Window.Resources>
+        <local:Suppliers x:Key="suppliers" />
+        <CollectionViewSource x:Key="cvsSuppliers" Source="{StaticResource suppliers}"
+                          >
+        </CollectionViewSource>
+        <local:Products x:Key="products" />
+        <CollectionViewSource x:Key="cvsProducts" Source="{Binding Source={StaticResource cvsSuppliers}, Path='Products'}">
+        </CollectionViewSource>
+    </Window.Resources>
+    <StackPanel>
+        <DataGrid Name="SupplierList" AutoGenerateColumns="False" ItemsSource="{Binding Source={StaticResource cvsSuppliers}}" SelectionChanged="SupplierList_SelectionChanged"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="ProductList" AutoGenerateColumns="False" ItemsSource="{Binding Source={StaticResource cvsProducts}}" SelectionChanged="ProductList_SelectionChanged"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="*" />
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="*" />
+                <DataGridCheckBoxColumn Header="In Warehouse" Binding="{Binding InWarehouse}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>
