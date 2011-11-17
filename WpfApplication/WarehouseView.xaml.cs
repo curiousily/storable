@@ -14,20 +14,17 @@ using System.Collections.ObjectModel;
 using NaughtySpirit.StoreManager.DomainObjects;
 using NaughtySpirit.StoreManager.DataLayer;
 
-namespace WpfApplication.SalesManagement
+namespace WpfApplication
 {
     /// <summary>
-    /// Interaction logic for AddProductView.xaml
+    /// Interaction logic for WarehouseView.xaml
     /// </summary>
-    public partial class AddProductView : Window
+    public partial class WarehouseView : Window
     {
         private readonly StorageContext dataContext = new StorageContext();
-        private OrderItem orderItem;
 
-        public AddProductView(OrderItem orderItem)
+        public WarehouseView()
         {
-            // TODO: Complete member initialization
-            this.orderItem = orderItem;
             InitializeComponent();
             var suppliersQuery = from supplier in dataContext.Suppliers.Include("Products")
                                  select supplier;
@@ -38,42 +35,23 @@ namespace WpfApplication.SalesManagement
             }
         }
 
-        private void CollectionViewSource_Filter(object sender, FilterEventArgs e)
+        private void OrderHandler(object sender, RoutedEventArgs e)
         {
-            Supplier s = e.Item as Supplier;
-            if (s != null)
-            // If filter is turned on, filter completed items.
-            {
-                if (s.Name.Contains(FilterBox.Text))
-                {
-                    e.Accepted = true;
-                }
-                else
-                {
-                    e.Accepted = false;
-                }
-            }
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
+            var product = ProductList.SelectedValue as Product;
+            product.InWarehouse = true;
+            dataContext.SaveChanges();
+            CollectionViewSource.GetDefaultView(ProductList.ItemsSource).Refresh();
             CollectionViewSource.GetDefaultView(SupplierList.ItemsSource).Refresh();
         }
 
-        private void CollectionViewSource_Filter_1(object sender, FilterEventArgs e)
+        private void ProductsFilter(object sender, FilterEventArgs e)
         {
-            
             Product s = e.Item as Product;
             if (s != null)
             // If filter is turned on, filter completed items.
             {
                 if (s.InWarehouse == false)
                 {
-                    e.Accepted = false;
-                    return;
-                }
-                if (s.Name.Contains(ProductFilterBox.Text))
-                {
                     e.Accepted = true;
                 }
                 else
@@ -83,18 +61,31 @@ namespace WpfApplication.SalesManagement
             }
         }
 
-        private void ProductFilterBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void SuppliersFilter(object sender, FilterEventArgs e)
         {
-            CollectionViewSource.GetDefaultView(ProductList.ItemsSource).Refresh();
-        }
+            Supplier s = e.Item as Supplier;
+            if (s != null)
+            {
+                bool flag = false;
+                foreach (var product in s.Products)
+                {
+                    if (!product.InWarehouse)
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag)
+                {
+                    e.Accepted = true;
+                }
+                else
+                {
+                    e.Accepted = false;
+                }
 
-        private void AddClickHandler(object sender, RoutedEventArgs e)
-        {
-            var product = ProductList.SelectedValue as Product;
-            orderItem.ProductName = product.Name;
-            orderItem.ProductPrice = product.Price;
-            orderItem.SupplierName = product.Supplier.Name;
-            Close();
+                
+            }
         }
     }
 
