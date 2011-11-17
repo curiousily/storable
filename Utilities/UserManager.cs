@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NaughtySpirit.StoreManager.DomainObjects;
 
-namespace WpfApplication
+namespace NaughtySpirit.StoreManager.Utilities
 {
     public class UserManager
     {

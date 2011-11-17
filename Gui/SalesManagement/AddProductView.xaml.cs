@@ -14,19 +14,18 @@ using System.Collections.ObjectModel;
 using NaughtySpirit.StoreManager.DomainObjects;
 using NaughtySpirit.StoreManager.DataLayer;
 
-namespace WpfApplication.SalesManagement
+namespace NaughtySpirit.StoreManager.Gui.SalesManagement
 {
     /// <summary>
     /// Interaction logic for AddProductView.xaml
     /// </summary>
     public partial class AddProductView : Window
     {
-        private readonly StorageContext dataContext = new StorageContext();
+        private readonly DataContext dataContext = new DataContext();
         private OrderItem orderItem;
 
         public AddProductView(OrderItem orderItem)
         {
-            // TODO: Complete member initialization
             this.orderItem = orderItem;
             InitializeComponent();
             var suppliersQuery = from supplier in dataContext.Suppliers.Include("Products")
@@ -63,12 +62,12 @@ namespace WpfApplication.SalesManagement
             }
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void SupplierFilterBoxChangedHandler(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(SupplierList.ItemsSource).Refresh();
         }
 
-        private void CollectionViewSource_Filter_1(object sender, FilterEventArgs e)
+        private void ProductFilter(object sender, FilterEventArgs e)
         {
             
             Product s = e.Item as Product;
@@ -91,7 +90,7 @@ namespace WpfApplication.SalesManagement
             }
         }
 
-        private void ProductFilterBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void ProductFilterBoxChangedHandler(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(ProductList.ItemsSource).Refresh();
         }

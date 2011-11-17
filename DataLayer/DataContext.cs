@@ -7,9 +7,9 @@ using NaughtySpirit.StoreManager.DomainObjects;
 
 namespace NaughtySpirit.StoreManager.DataLayer
 {
-    public class StorageContext : DbContext
+    public class DataContext : DbContext
     {
-        public StorageContext() : base("NaugtyStoreManager")
+        public DataContext() : base("NaugtyStoreManager")
         {
         }
 

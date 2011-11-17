@@ -8,7 +8,7 @@ using NaughtySpirit.StoreManager.DataLayer;
 using NaughtySpirit.StoreManager.DomainObjects;
 using System.Data.Entity;
 
-namespace WpfApplication
+namespace NaughtySpirit.StoreManager.WpfApplication
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -17,14 +17,13 @@ namespace WpfApplication
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            Database.SetInitializer<StorageContext>(new StoreDataInitializer());
-            this.StartupUri = new System.Uri("/LoginView.xaml", System.UriKind.Relative);
+            Database.SetInitializer<DataContext>(new StoreDataInitializer());
         }
     }
 
-    public class StoreDataInitializer : DropCreateDatabaseAlways<StorageContext>
+    public class StoreDataInitializer : DropCreateDatabaseAlways<DataContext>
     {
-        protected override void Seed(StorageContext context)
+        protected override void Seed(DataContext context)
         {
             base.Seed(context);
             var admin = new User { Name = "admin", Password = "admin", Administrator = true };

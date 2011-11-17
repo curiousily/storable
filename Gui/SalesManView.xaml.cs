@@ -10,12 +10,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfApplication.SalesManagement;
+using NaughtySpirit.StoreManager.Gui.SalesManagement;
 using NaughtySpirit.StoreManager.DomainObjects;
 using System.Collections.ObjectModel;
 using NaughtySpirit.StoreManager.DataLayer;
+using NaughtySpirit.StoreManager.Utilities;
 
-namespace WpfApplication
+namespace NaughtySpirit.StoreManager.Gui
 {
     /// <summary>
     /// Interaction logic for SalesManView.xaml
@@ -25,7 +26,7 @@ namespace WpfApplication
 
         public decimal OrderTotal { get; set; }
 
-        private readonly StorageContext dataContext = new StorageContext();
+        private readonly DataContext dataContext = new DataContext();
 
         public SalesManView()
         {
@@ -49,7 +50,7 @@ namespace WpfApplication
             
         }
 
-        private void OrderHandler(object sender, RoutedEventArgs e)
+        private void SaleHandler(object sender, RoutedEventArgs e)
         {
             var orderItems = Resources["orderItems"] as OrderItems;
             var order = new Order();
@@ -61,6 +62,7 @@ namespace WpfApplication
             order.User = UserManager.Instance.User.Name;
             dataContext.Orders.Add(order);
             dataContext.SaveChanges();
+            Close();
         }
     }
 
