@@ -14,6 +14,7 @@ using WpfApplication.SalesManagement;
 using NaughtySpirit.StoreManager.DomainObjects;
 using System.Collections.ObjectModel;
 using NaughtySpirit.StoreManager.DataLayer;
+using NaughtySpirit.StoreManager.Utilities;
 
 namespace WpfApplication
 {

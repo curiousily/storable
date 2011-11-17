@@ -5,7 +5,7 @@ using System.Text;
 using NaughtySpirit.StoreManager.DataLayer;
 using NaughtySpirit.StoreManager.DomainObjects;
 
-namespace WpfApplication
+namespace NaughtySpirit.StoreManager.Utilities
 {
     public class UserAuthentication
     {

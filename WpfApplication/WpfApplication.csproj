@@ -68,11 +68,9 @@
     <Compile Include="SupplierManagement\SupplyListView.xaml.cs">
       <DependentUpon>SupplyListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserAuthentication.cs" />
     <Compile Include="UserManagement\UserListView.xaml.cs">
       <DependentUpon>UserListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserManager.cs" />
     <Compile Include="WarehouseView.xaml.cs">
       <DependentUpon>WarehouseView.xaml</DependentUpon>
     </Compile>
@@ -149,6 +147,10 @@
     <ProjectReference Include="..\DomainObjects\DomainObjects.csproj">
       <Project>{4F93F735-1442-4B8F-ABB6-74984FAACA5B}</Project>
       <Name>DomainObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{745C957F-65AF-40B4-A693-CF808A2134C8}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
