@@ -73,6 +73,9 @@
       <DependentUpon>UserListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserManager.cs" />
+    <Compile Include="WarehouseView.xaml.cs">
+      <DependentUpon>WarehouseView.xaml</DependentUpon>
+    </Compile>
     <Page Include="LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserManagement\UserListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WarehouseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
