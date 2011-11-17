@@ -8,7 +8,7 @@ using NaughtySpirit.StoreManager.DataLayer;
 using NaughtySpirit.StoreManager.DomainObjects;
 using System.Data.Entity;
 
-namespace WpfApplication
+namespace NaughtySpirit.StoreManager.WpfApplication
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -18,7 +18,6 @@ namespace WpfApplication
         protected override void OnStartup(StartupEventArgs e)
         {
             Database.SetInitializer<StorageContext>(new StoreDataInitializer());
-            this.StartupUri = new System.Uri("/LoginView.xaml", System.UriKind.Relative);
         }
     }
 

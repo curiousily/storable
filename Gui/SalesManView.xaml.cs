@@ -10,13 +10,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfApplication.SalesManagement;
+using NaughtySpirit.StoreManager.Gui.SalesManagement;
 using NaughtySpirit.StoreManager.DomainObjects;
 using System.Collections.ObjectModel;
 using NaughtySpirit.StoreManager.DataLayer;
 using NaughtySpirit.StoreManager.Utilities;
 
-namespace WpfApplication
+namespace NaughtySpirit.StoreManager.Gui
 {
     /// <summary>
     /// Interaction logic for SalesManView.xaml

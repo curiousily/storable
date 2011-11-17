@@ -8,7 +8,7 @@
     <ProjectGuid>{D3766218-3C63-4845-BD55-2E3405054CFF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WpfApplication</RootNamespace>
+    <RootNamespace>NaughtySpirit.StoreManager.Gui</RootNamespace>
     <AssemblyName>WpfApplication</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -59,60 +59,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SalesManagement\AddProductView.xaml.cs">
-      <DependentUpon>AddProductView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SalesManView.xaml.cs">
-      <DependentUpon>SalesManView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SupplierManagement\SupplyListView.xaml.cs">
-      <DependentUpon>SupplyListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserManagement\UserListView.xaml.cs">
-      <DependentUpon>UserListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WarehouseView.xaml.cs">
-      <DependentUpon>WarehouseView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="LoginView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AdminView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LoginView.xaml.cs">
-      <DependentUpon>LoginView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AdminView.xaml.cs">
-      <DependentUpon>AdminView.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="SalesManagement\AddProductView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SalesManView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SupplierManagement\SupplyListView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserManagement\UserListView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WarehouseView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -147,6 +97,10 @@
     <ProjectReference Include="..\DomainObjects\DomainObjects.csproj">
       <Project>{4F93F735-1442-4B8F-ABB6-74984FAACA5B}</Project>
       <Name>DomainObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gui\Gui.csproj">
+      <Project>{FB44A423-FF17-41D0-90FA-7DF583CE037B}</Project>
+      <Name>Gui</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{745C957F-65AF-40B4-A693-CF808A2134C8}</Project>

@@ -16,7 +16,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 
-namespace WpfApplication.UserManagement
+namespace NaughtySpirit.StoreManager.Gui.UserManagement
 {
     /// <summary>
     /// Interaction logic for UserListView.xaml

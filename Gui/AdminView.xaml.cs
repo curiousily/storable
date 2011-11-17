@@ -11,10 +11,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApplication.UserManagement;
-using WpfApplication.SupplierManagement;
+using NaughtySpirit.StoreManager.Gui.UserManagement;
+using NaughtySpirit.StoreManager.Gui.SupplyManagement;
 
-namespace WpfApplication
+namespace NaughtySpirit.StoreManager.Gui
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

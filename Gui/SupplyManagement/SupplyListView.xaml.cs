@@ -15,7 +15,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using NaughtySpirit.StoreManager.DomainObjects;
 
-namespace WpfApplication.SupplierManagement
+namespace NaughtySpirit.StoreManager.Gui.SupplyManagement
 {
     /// <summary>
     /// Interaction logic for SupplierListView.xaml

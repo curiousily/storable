@@ -14,7 +14,7 @@ using System.Collections.ObjectModel;
 using NaughtySpirit.StoreManager.DomainObjects;
 using NaughtySpirit.StoreManager.DataLayer;
 
-namespace WpfApplication
+namespace NaughtySpirit.StoreManager.Gui
 {
     /// <summary>
     /// Interaction logic for WarehouseView.xaml

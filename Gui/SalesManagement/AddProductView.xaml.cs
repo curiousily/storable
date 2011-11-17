@@ -14,7 +14,7 @@ using System.Collections.ObjectModel;
 using NaughtySpirit.StoreManager.DomainObjects;
 using NaughtySpirit.StoreManager.DataLayer;
 
-namespace WpfApplication.SalesManagement
+namespace NaughtySpirit.StoreManager.Gui.SalesManagement
 {
     /// <summary>
     /// Interaction logic for AddProductView.xaml

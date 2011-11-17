@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NaughtySpirit.StoreManager.Utilities;
 
-namespace WpfApplication
+namespace NaughtySpirit.StoreManager.Gui
 {
     /// <summary>
     /// Interaction logic for LoginView.xaml
