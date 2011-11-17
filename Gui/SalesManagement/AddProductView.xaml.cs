@@ -21,7 +21,7 @@ namespace NaughtySpirit.StoreManager.Gui.SalesManagement
     /// </summary>
     public partial class AddProductView : Window
     {
-        private readonly StorageContext dataContext = new StorageContext();
+        private readonly DataContext dataContext = new DataContext();
         private OrderItem orderItem;
 
         public AddProductView(OrderItem orderItem)

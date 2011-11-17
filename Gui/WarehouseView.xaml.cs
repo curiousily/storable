@@ -21,7 +21,7 @@ namespace NaughtySpirit.StoreManager.Gui
     /// </summary>
     public partial class WarehouseView : Window
     {
-        private readonly StorageContext dataContext = new StorageContext();
+        private readonly DataContext dataContext = new DataContext();
 
         public WarehouseView()
         {

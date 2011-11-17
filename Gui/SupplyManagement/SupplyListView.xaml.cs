@@ -22,7 +22,7 @@ namespace NaughtySpirit.StoreManager.Gui.SupplyManagement
     /// </summary>
     public partial class SupplyListView : Window
     {
-        private readonly StorageContext dataContext = new StorageContext();
+        private readonly DataContext dataContext = new DataContext();
         public SupplyListView()
         {
             InitializeComponent();

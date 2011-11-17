@@ -9,7 +9,7 @@ namespace NaughtySpirit.StoreManager.Utilities
 {
     public class UserAuthentication
     {
-        private readonly StorageContext dataContext = new StorageContext();
+        private readonly DataContext dataContext = new DataContext();
 
         public User Authenticate(String username, String password)
         {

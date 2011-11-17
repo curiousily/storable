@@ -23,7 +23,7 @@ namespace NaughtySpirit.StoreManager.Gui.UserManagement
     /// </summary>
     public partial class UserListView : Window
     {
-        private readonly StorageContext dataContext = new StorageContext();
+        private readonly DataContext dataContext = new DataContext();
 
         public UserListView()
         {

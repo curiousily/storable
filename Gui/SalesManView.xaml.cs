@@ -26,7 +26,7 @@ namespace NaughtySpirit.StoreManager.Gui
 
         public decimal OrderTotal { get; set; }
 
-        private readonly StorageContext dataContext = new StorageContext();
+        private readonly DataContext dataContext = new DataContext();
 
         public SalesManView()
         {
@@ -50,7 +50,7 @@ namespace NaughtySpirit.StoreManager.Gui
             
         }
 
-        private void OrderHandler(object sender, RoutedEventArgs e)
+        private void SaleHandler(object sender, RoutedEventArgs e)
         {
             var orderItems = Resources["orderItems"] as OrderItems;
             var order = new Order();
@@ -62,6 +62,7 @@ namespace NaughtySpirit.StoreManager.Gui
             order.User = UserManager.Instance.User.Name;
             dataContext.Orders.Add(order);
             dataContext.SaveChanges();
+            Close();
         }
     }
 
