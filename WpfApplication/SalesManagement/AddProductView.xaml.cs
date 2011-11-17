@@ -29,7 +29,8 @@ namespace WpfApplication.SalesManagement
             // TODO: Complete member initialization
             this.orderItem = orderItem;
             InitializeComponent();
-            var suppliersQuery = from supplier in dataContext.Suppliers.Include("Products") select supplier;
+            var suppliersQuery = from supplier in dataContext.Suppliers.Include("Products")
+                                 select supplier;
             var suppliers = (Suppliers)Resources["suppliers"];
             foreach (var supplier in suppliersQuery)
             {
@@ -37,12 +38,20 @@ namespace WpfApplication.SalesManagement
             }
         }
 
-        private void CollectionViewSource_Filter(object sender, FilterEventArgs e)
+        private void SuppliersFilter(object sender, FilterEventArgs e)
         {
             Supplier s = e.Item as Supplier;
             if (s != null)
             // If filter is turned on, filter completed items.
             {
+                
+                var productCount = s.Products.Count<Product>(p => p.InWarehouse);
+                if (productCount == 0)
+                {
+                    e.Accepted = false;
+                    return;
+                }
+
                 if (s.Name.Contains(FilterBox.Text))
                 {
                     e.Accepted = true;
@@ -66,6 +75,11 @@ namespace WpfApplication.SalesManagement
             if (s != null)
             // If filter is turned on, filter completed items.
             {
+                if (s.InWarehouse == false)
+                {
+                    e.Accepted = false;
+                    return;
+                }
                 if (s.Name.Contains(ProductFilterBox.Text))
                 {
                     e.Accepted = true;

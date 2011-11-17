@@ -30,5 +30,11 @@ namespace WpfApplication
             var userList = new UserListView();
             userList.Show();
         }
+
+        private void ManageWarehouseClickHandler(object sender, RoutedEventArgs e)
+        {
+            var warehouseView = new WarehouseView();
+            warehouseView.ShowDialog();
+        }
     }
 }
