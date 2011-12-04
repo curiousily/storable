@@ -16,6 +16,6 @@ namespace NaughtySpirit.StoreManager.DomainObjects
         public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
-        public IList<Product> Products { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

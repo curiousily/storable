@@ -58,7 +58,7 @@ namespace NaughtySpirit.StoreManager.WpfApplication
             });
             context.Suppliers.Add(softwareSupplier);
             context.Suppliers.Add(carSupplier);
-            context.Suppliers.Add(toothFairySupplier);
+            context.Suppliers.Add(toothFairySupplier);            
         }
     }
 }

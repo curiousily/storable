@@ -14,6 +14,7 @@ using NaughtySpirit.StoreManager.DataLayer;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using NaughtySpirit.StoreManager.DomainObjects;
+using System.Xml.Serialization;
 
 namespace NaughtySpirit.StoreManager.Gui.SupplyManagement
 {
@@ -28,7 +29,8 @@ namespace NaughtySpirit.StoreManager.Gui.SupplyManagement
             InitializeComponent();
             var suppliersQuery = from supplier in dataContext.Suppliers.Include("Products")
                                  select supplier;
-            var suppliers = (Suppliers)Resources["suppliers"];
+            var suppliers = (Suppliers)Resources["suppliers"];           
+
             foreach (var supplier in suppliersQuery)
             {
                 suppliers.Add(supplier);

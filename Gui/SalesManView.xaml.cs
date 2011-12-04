@@ -64,6 +64,12 @@ namespace NaughtySpirit.StoreManager.Gui
             dataContext.SaveChanges();
             Close();
         }
+
+        private void saleReportHandler(object sender, RoutedEventArgs e)
+        {
+            var saleView = new SaleView();
+            saleView.ShowDialog();
+        }
     }
 
     public class OrderItems : ObservableCollection<OrderItem>

@@ -23,7 +23,8 @@
         <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
             <TextBlock Text="Total:"/>
             <TextBlock Name="OrderLabel" Text="0" Margin="20 0 0 0"/>
-            <Button Content="Sale" Margin="480 0 0 0" Click="SaleHandler"/>    
+            <Button Content="View Report" Margin="380 0 0 0" Click="saleReportHandler"/>
+            <Button Content="Sale" Margin="40 0 0 0" Click="SaleHandler"/>    
         </StackPanel>
         
     </StackPanel>
